@@ -1,5 +1,16 @@
 require 'rest-core'
 
+# Usage:
+#
+#     # create client id: https://code.google.com/apis/console/
+#     gp = RestCore::GooglePlus.new(client_id: CLIENT_ID,
+#                                   client_secret: CLIENT_SECRET,
+#                                   redirect_uri: REDIRECT_URI)
+#     gp.authorize_url # copy and paste the URL in browser to authorize
+#     gp.authorize!(CODE)
+#     p gp.me
+#
+# The full API doc is here: https://developers.google.com/+/api/
 RestCore::GooglePlus = RestCore::Builder.
   client(:data, :client_id, :client_secret, :redirect_uri) do
 
